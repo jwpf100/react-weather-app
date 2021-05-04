@@ -14,7 +14,7 @@ const SearchTextInput = ({ search, setSearch, placeholder }) => {
           value={search}
           onChange={handleSearchTerm}
           placeholder={placeholder}
-          className="p-1 m-2"
+          className="m-1"
         />
       </div>
     </>

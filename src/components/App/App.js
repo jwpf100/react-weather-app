@@ -3,10 +3,14 @@ import '../../scss/custom.scss'
 import SearchSection from '../SearchSection'
 import CurrentForecastDisplay from '../CurrentForecastDisplay'
 import SevenDayForecastDisplay from '../SevenDayForecastDisplay'
+import SavedSearchDisplay from '../SavedSearchDisplay'
+import SearchTextInput from '../SearchTextInput'
 
 const App = () => {
-  const [currentWeatherData, setCurrentWeatherData] = useState('')
-  const [forecastWeatherData, setForecastWeatherData] = useState('')
+  const [currentWeatherData, setCurrentWeatherData] = useState({})
+  const [forecastWeatherData, setForecastWeatherData] = useState({})
+  const [currentSearch, setCurrentSearch] = useState({})
+  const [searchList, setSearchList] = useState([])
 
   return (
     <div>
@@ -15,8 +19,19 @@ const App = () => {
         setCurrentWeatherData={setCurrentWeatherData}
         setForecastWeatherData={setForecastWeatherData}
       />
-      <CurrentForecastDisplay currentWeatherData={currentWeatherData} />
+      <CurrentForecastDisplay
+        currentWeatherData={currentWeatherData}
+        setCurrentSearch={setCurrentSearch}
+        searchList={searchList}
+        setSearchList={setSearchList}
+      />
       <SevenDayForecastDisplay forecastWeatherData={forecastWeatherData} />
+      <SavedSearchDisplay
+        searchList={searchList}
+        setCurrentWeatherData={setCurrentWeatherData}
+        setForecastWeatherData={setForecastWeatherData}
+        setSearchList={setSearchList}
+      />
     </div>
   )
 }

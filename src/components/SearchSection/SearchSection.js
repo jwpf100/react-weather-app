@@ -58,38 +58,42 @@ const SearchSection = ({ setCurrentWeatherData, setForecastWeatherData }) => {
 
   return (
     <>
-      <div className="d-flex justify-content-center align-items-center">
-        {searchType === 'cityname' && (
-          <SearchCitySection
-            searchCity={searchCity}
-            setSearchCity={setSearchCity}
-            searchCountry={searchCountry}
-            setSearchCountry={setSearchCountry}
-          />
-        )}
-        {searchType === 'postcode' && (
-          <SearchPostcodeSection
-            searchPostcode={searchPostcode}
-            setSearchPostcode={setSearchPostcode}
-            searchCountry={searchCountry}
-            setSearchCountry={setSearchCountry}
-          />
-        )}
-        {searchType === 'latlong' && (
-          <SearchLatLonSection
-            searchLat={searchLat}
-            setSearchLat={setSearchLat}
-            searchLon={searchLon}
-            setSearchLon={setSearchLon}
-          />
-        )}
-        <button
-          type="button"
-          className="btn btn-light m-2"
-          onClick={handleSearchSubmit}
-        >
-          Search
-        </button>
+      <div className="d-flex flex-wrap justify-content-center align-items-center pt-2">
+        <div className="col-12 col-md-6">
+          {searchType === 'cityname' && (
+            <SearchCitySection
+              searchCity={searchCity}
+              setSearchCity={setSearchCity}
+              searchCountry={searchCountry}
+              setSearchCountry={setSearchCountry}
+            />
+          )}
+          {searchType === 'postcode' && (
+            <SearchPostcodeSection
+              searchPostcode={searchPostcode}
+              setSearchPostcode={setSearchPostcode}
+              searchCountry={searchCountry}
+              setSearchCountry={setSearchCountry}
+            />
+          )}
+          {searchType === 'latlong' && (
+            <SearchLatLonSection
+              searchLat={searchLat}
+              setSearchLat={setSearchLat}
+              searchLon={searchLon}
+              setSearchLon={setSearchLon}
+            />
+          )}
+        </div>
+        <div className="d-flex col-12 col-md-3 justify-content-center align-items-center">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleSearchSubmit}
+          >
+            Search
+          </button>
+        </div>
       </div>
       <div
         className="d-flex justify-content-center align-items-center form-check"
