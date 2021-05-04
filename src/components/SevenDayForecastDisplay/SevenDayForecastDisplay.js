@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { fetchForecastWeatherData, weatherIconLink } from '../../utils/api'
+import { fetchDummyForecastWeatherData, weatherIconLink } from '../../utils/api'
 import ForecastRowDisplay from '../ForecastRowDisplay'
 import { range } from '../../utils/maths'
 
 const CurrentForecastDisplay = () => {
   // Set State
   const [forecastWeather, setForecastWeather] = useState(
-    fetchForecastWeatherData()
+    fetchDummyForecastWeatherData()
   )
 
   return (

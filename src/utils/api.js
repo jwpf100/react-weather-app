@@ -1,8 +1,13 @@
 // Test Data
 const weatherIconLink = 'https://www.weatherbit.io/static/img/icons/'
 
+// API Key for testing
+const APIKey = 'e90f26a7c3564efc8ea5787ca7a6b982'
+// API Key
+// const APIKey = '0777401f3864415cae72a3cee34da032'
+
 // Current Forecast
-const fetchCurrentWeatherData = () => {
+const fetchDummyCurrentWeatherData = () => {
   const forecastData = {
     data: [
       {
@@ -54,7 +59,7 @@ const fetchCurrentWeatherData = () => {
 }
 
 // Current Forecast
-const fetchForecastWeatherData = () => {
+const fetchDummyForecastWeatherData = () => {
   const forecastData = {
     data: [
       {
@@ -772,4 +777,27 @@ const fetchForecastWeatherData = () => {
   return forecastData
 }
 
-export { fetchCurrentWeatherData, fetchForecastWeatherData, weatherIconLink }
+const fetchCurrentWeatherData = async (
+  latInput,
+  lonInput,
+  cityInput,
+  stateInput,
+  countryInput,
+  postcodeInput,
+  setCurrentWeatherData
+) => {
+  const requestCurrentData = `https://api.weatherbit.io/v2.0/current?lat=${latInput}&lon=${lonInput}&city=${cityInput}&postal_code=${postcodeInput}&state=${stateInput}&country=${countryInput}&key=${APIKey}&include=minutely`
+
+  const currentWeatherData = await fetch(requestCurrentData).then((response) =>
+    response.json()
+  )
+  console.log('Running fetchCurrentWeatherData')
+  setCurrentWeatherData(currentWeatherData)
+}
+
+export {
+  fetchDummyCurrentWeatherData,
+  fetchDummyForecastWeatherData,
+  fetchCurrentWeatherData,
+  weatherIconLink,
+}

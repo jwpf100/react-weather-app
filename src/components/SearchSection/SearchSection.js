@@ -1,27 +1,46 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import SearchCitySection from '../SearchCitySection'
 import SearchPostcodeSection from '../SearchPostcodeSection'
 import SearchLatLonSection from '../SearchLatLonSection'
+import { fetchCurrentWeatherData } from '../../utils/api'
 
-const SearchSection = () => {
+const SearchSection = ({ setCurrentWeatherData }) => {
   const [searchCity, setSearchCity] = useState('')
+  const [searchAltState, setAltState] = useState('')
   const [searchCountry, setSearchCountry] = useState('')
   const [searchPostcode, setSearchPostcode] = useState('')
   const [searchLat, setSearchLat] = useState()
   const [searchLon, setSearchLon] = useState()
   const [searchType, setSearchType] = useState('cityname')
 
-  const handleSearchSubmit = (e) => {
-    e.preventDefault()
-    console.log(searchCity, searchCountry)
-    console.log(searchPostcode, searchCountry)
-    console.log(searchLat, searchLon)
+  // Reset all search states.  This will also clear search input areas.
+
+  const clearSearchInputs = () => {
     setSearchCity('')
     setSearchPostcode('')
     setSearchCountry('')
     setSearchLat('')
     setSearchLon('')
   }
+
+  // Handle the search submit button
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault()
+    fetchCurrentWeatherData(
+      searchLat,
+      searchLon,
+      searchCity,
+      searchAltState,
+      searchCountry,
+      searchPostcode,
+      setCurrentWeatherData
+    )
+    clearSearchInputs()
+  }
+
+  // Set searchType state based on radio button selected.  This will display the relvant search section.
 
   const handleRadioSelectionChange = (e) => setSearchType(e.target.id)
 
@@ -106,23 +125,10 @@ const SearchSection = () => {
 
 export default SearchSection
 
-/* <SearchCitySection
-          searchCity={searchCity}
-          setSearchCity={setSearchCity}
-          searchCountry={searchCountry}
-          setSearchCountry={setSearchCountry}
-        />
-        <SearchPostcodeSection
-          searchPostcode={searchPostcode}
-          setSearchPostcode={setSearchPostcode}
-          searchCountry={searchCountry}
-          setSearchCountry={setSearchCountry}
-        />
-        <SearchLatLonSection
-          searchLat={searchLat}
-          setSearchLat={setSearchLat}
-          searchLon={searchLon}
-          setSearchLon={setSearchLon}
-        />
+SearchSection.propTypes = {
+  setCurrentWeatherData: PropTypes.func,
+}
 
-        */
+SearchSection.defaultProps = {
+  setCurrentWeatherData: () => {},
+}
