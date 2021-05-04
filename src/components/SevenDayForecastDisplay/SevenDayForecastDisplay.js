@@ -5,11 +5,10 @@ import ForecastRowDisplay from '../ForecastRowDisplay'
 import { range } from '../../utils/maths'
 
 const CurrentForecastDisplay = ({ forecastWeatherData }) => {
-  console.log(forecastWeatherData)
   return (
     <>
       {Object.keys(forecastWeatherData).length === 0 ? (
-        <div>Loading</div>
+        <div />
       ) : (
         <div>
           <div className="container border">

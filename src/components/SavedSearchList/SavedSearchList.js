@@ -9,8 +9,10 @@ import {
 const SavedSearchList = ({
   className,
   search,
+  searchList,
   setCurrentWeatherData,
   setForecastWeatherData,
+  setSearchList,
 }) => {
   const handleShowSavedSearch = () => {
     fetchCurrentWeatherData(
@@ -32,7 +34,14 @@ const SavedSearchList = ({
       setForecastWeatherData
     )
   }
-  const handleDeleteSearch = () => {}
+
+  const handleDeleteSearch = () => {
+    // Find index of search.city in array
+
+    const indexToDelete = searchList.findIndex(
+      (element) => element.uniqueID === search.uniqueID
+    )
+  }
 
   return (
     <div
@@ -53,7 +62,7 @@ const SavedSearchList = ({
         <button
           type="button"
           className="btn btn-danger m-2"
-          onClick={handleDeleteSearch}
+          onClick={() => handleDeleteSearch(search, searchList, setSearchList)}
         >
           Delete
         </button>
@@ -73,13 +82,17 @@ export default StyledSavedSearchList
 SavedSearchList.propTypes = {
   className: PropTypes.string,
   search: PropTypes.object,
+  searchList: PropTypes.array,
   setCurrentWeatherData: PropTypes.func,
   setForecastWeatherData: PropTypes.func,
+  setSearchList: PropTypes.func,
 }
 
 SavedSearchList.defaultProps = {
   className: '',
   search: {},
+  searchList: [],
   setCurrentWeatherData: () => {},
   setForecastWeatherData: () => {},
+  setSearchList: () => {},
 }

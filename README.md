@@ -4,6 +4,7 @@ Actions:
 
 # Critical
 
+Saved Searches - Need to add function to delete a saved search
 Saved Searches - ensure that duplicates can't be added to list
 Error catching when API doesn't return with data
 

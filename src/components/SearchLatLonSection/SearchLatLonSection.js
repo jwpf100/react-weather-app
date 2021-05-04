@@ -10,7 +10,7 @@ const SearchLatLonSection = ({
 }) => {
   return (
     <>
-      <div className="d-flex justify-content-center align-items-center">
+      <div className="d-flex justify-content-center align-items-center flex-wrap">
         <SearchTextInput
           search={searchLat}
           setSearch={setSearchLat}

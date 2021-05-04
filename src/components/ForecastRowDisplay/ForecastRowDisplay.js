@@ -8,7 +8,7 @@ const ForecastRowDisplay = ({
   weatherIconLink,
 }) => {
   // Set State
-  console.log(forecastWeather)
+
   return (
     <div
       className={[

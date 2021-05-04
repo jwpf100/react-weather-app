@@ -16,6 +16,7 @@ const CurrentForecastDisplay = ({
       cityInput: currentWeatherData.data[0].city_name,
       stateInput: currentWeatherData.data[0].state_code,
       countryInput: currentWeatherData.data[0].country_code,
+      uniqueID: `${currentWeatherData.data[0].city_name},${currentWeatherData.data[0].state_code},${currentWeatherData.data[0].country_code}`,
     }
     setCurrentSearch(currentLocationObject)
     setSearchList([...searchList, currentLocationObject])
@@ -24,7 +25,7 @@ const CurrentForecastDisplay = ({
   return (
     <>
       {Object.keys(currentWeatherData).length === 0 ? (
-        <div>Loading</div>
+        <div className="container">Please search for a location...</div>
       ) : (
         <div>
           <div className="container border d-flex">
@@ -50,10 +51,14 @@ const CurrentForecastDisplay = ({
               alt={currentWeatherData.data[0].weather.description}
             />
             <p>{`${currentWeatherData.data[0].weather.description}`}</p>
-            <p>{`Sunrise: ${currentWeatherData.data[0].sunrise} Sunset: ${currentWeatherData.data[0].sunset}`}</p>
-            <p>{`Temperature: ${currentWeatherData.data[0].temp}`}</p>
-            <p>{`Windspeed: ${currentWeatherData.data[0].wind_spd} Direction: ${currentWeatherData.data[0].wind_dir}`}</p>
-            <p>{`Precipitation: ${currentWeatherData.data[0].precip}`}</p>
+            <div className="d-flex justify-content-between">
+              <p className="d-inline-block">{`Sunrise: ${currentWeatherData.data[0].sunrise} Sunset: ${currentWeatherData.data[0].sunset}`}</p>
+              <p className="d-inline-block">{`Temperature: ${currentWeatherData.data[0].temp}`}</p>
+            </div>
+            <div className="d-flex justify-content-between">
+              <p>{`Windspeed: ${currentWeatherData.data[0].wind_spd} Direction: ${currentWeatherData.data[0].wind_dir}`}</p>
+              <p>{`Precipitation: ${currentWeatherData.data[0].precip}`}</p>
+            </div>
           </div>
         </div>
       )}

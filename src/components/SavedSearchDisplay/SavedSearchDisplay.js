@@ -6,11 +6,12 @@ const CurrentForecastDisplay = ({
   searchList,
   setCurrentWeatherData,
   setForecastWeatherData,
+  setSearchList,
 }) => {
   return (
     <>
       {searchList.length === 0 ? (
-        <div>No Saved Searchs</div>
+        <div className="container">No Saved Searchs</div>
       ) : (
         <div>
           <div className="container border">
@@ -18,8 +19,10 @@ const CurrentForecastDisplay = ({
             {searchList.map((search) => (
               <SavedSearchList
                 search={search}
+                searchList={searchList}
                 setCurrentWeatherData={setCurrentWeatherData}
                 setForecastWeatherData={setForecastWeatherData}
+                setSearchList={setSearchList}
               />
             ))}
           </div>
@@ -35,10 +38,12 @@ CurrentForecastDisplay.propTypes = {
   searchList: PropTypes.array,
   setCurrentWeatherData: PropTypes.func,
   setForecastWeatherData: PropTypes.func,
+  setSearchList: PropTypes.func,
 }
 
 CurrentForecastDisplay.defaultProps = {
   searchList: [],
   setCurrentWeatherData: () => {},
   setForecastWeatherData: () => {},
+  setSearchList: () => {},
 }

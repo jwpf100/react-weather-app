@@ -11,13 +11,6 @@ const App = () => {
   const [currentSearch, setCurrentSearch] = useState({})
   const [searchList, setSearchList] = useState([])
 
-  // const handleTestButton = () => {
-  //   console.log(currentWeatherData)
-  //   console.log(forecastWeatherData)
-  //   console.log(currentSearch)
-  //   console.log(searchList)
-  // }
-
   return (
     <div>
       <h1 className="text-center"> Weather App </h1>
@@ -43,6 +36,7 @@ const App = () => {
         searchList={searchList}
         setCurrentWeatherData={setCurrentWeatherData}
         setForecastWeatherData={setForecastWeatherData}
+        setSearchList={setSearchList}
       />
     </div>
   )

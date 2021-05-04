@@ -10,8 +10,9 @@ const SearchCitySection = ({
 }) => {
   return (
     <>
-      <div className="d-flex justify-content-center align-items-center">
+      <div className="d-flex justify-content-center align-items-center flex-wrap">
         <SearchTextInput
+          className=""
           search={searchCity}
           setSearch={setSearchCity}
           placeholder="City"
