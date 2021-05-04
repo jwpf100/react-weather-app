@@ -1,3 +1,4 @@
+// ESlint config file
 module.exports = {
   env: {
     browser: true,
