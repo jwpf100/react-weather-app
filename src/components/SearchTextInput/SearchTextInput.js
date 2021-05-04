@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const SearchBox = ({ search, setSearch, placeholder }) => {
+const SearchTextInput = ({ search, setSearch, placeholder }) => {
   const handleSearchTerm = (e) => {
     setSearch(e.target.value)
   }
@@ -11,6 +11,7 @@ const SearchBox = ({ search, setSearch, placeholder }) => {
       <div className="">
         <input
           type="text"
+          value={search}
           onChange={handleSearchTerm}
           placeholder={placeholder}
           className="p-1 m-2"
@@ -20,15 +21,15 @@ const SearchBox = ({ search, setSearch, placeholder }) => {
   )
 }
 
-export default SearchBox
+export default SearchTextInput
 
-SearchBox.propTypes = {
+SearchTextInput.propTypes = {
   search: PropTypes.string,
   setSearch: PropTypes.func,
   placeholder: PropTypes.string,
 }
 
-SearchBox.defaultProps = {
+SearchTextInput.defaultProps = {
   search: '',
   setSearch: '',
   placeholder: '',

@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import SearchTextInput from '../SearchTextInput'
 
-const SearchCitySection = ({
-  searchCity,
-  setSearchCity,
+const SearchPostcodeSection = ({
+  searchPostcode,
+  setSearchPostcode,
   searchCountry,
   setSearchCountry,
 }) => {
@@ -12,9 +12,9 @@ const SearchCitySection = ({
     <>
       <div className="d-flex justify-content-center align-items-center">
         <SearchTextInput
-          search={searchCity}
-          setSearch={setSearchCity}
-          placeholder="City"
+          search={searchPostcode}
+          setSearch={setSearchPostcode}
+          placeholder="Postcode"
         />
         <SearchTextInput
           search={searchCountry}
@@ -26,18 +26,18 @@ const SearchCitySection = ({
   )
 }
 
-export default SearchCitySection
+export default SearchPostcodeSection
 
-SearchCitySection.propTypes = {
-  searchCity: PropTypes.string,
-  setSearchCity: PropTypes.func,
+SearchPostcodeSection.propTypes = {
+  searchPostcode: PropTypes.string,
+  setSearchPostcode: PropTypes.func,
   searchCountry: PropTypes.string,
   setSearchCountry: PropTypes.func,
 }
 
-SearchCitySection.defaultProps = {
-  searchCity: '',
-  setSearchCity: () => {},
+SearchPostcodeSection.defaultProps = {
+  searchPostcode: '',
+  setSearchPostcode: () => {},
   searchCountry: '',
   setSearchCountry: () => {},
 }

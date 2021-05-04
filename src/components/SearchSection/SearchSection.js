@@ -1,15 +1,25 @@
 import React, { useState } from 'react'
 import SearchCitySection from '../SearchCitySection'
+import SearchPostcodeSection from '../SearchPostcodeSection'
+import SearchLatLonSection from '../SearchLatLonSection'
 
 const SearchSection = () => {
-  const [searchTerm, setSearchTerm] = useState()
+  const [searchCity, setSearchCity] = useState()
+  const [searchCountry, setSearchCountry] = useState()
+  const [searchPostcode, setSearchPostcode] = useState()
+  const [searchLat, setSearchLat] = useState()
+  const [searchLon, setSearchLon] = useState()
 
-  const handleSearchTermInput = (e) => {
-    setSearchTerm(e.target.value)
-  }
-
-  const handleSearchSubmit = () => {
-    console.log(searchTerm)
+  const handleSearchSubmit = (e) => {
+    e.preventDefault()
+    console.log(searchCity, searchCountry)
+    console.log(searchPostcode, searchCountry)
+    console.log(searchLat, searchLon)
+    setSearchCity('')
+    setSearchPostcode('')
+    setSearchCountry('')
+    setSearchLat('')
+    setSearchLon('')
   }
 
   const handleRadioSelectionChange = (e) => console.log(e.target.id)
@@ -17,7 +27,24 @@ const SearchSection = () => {
   return (
     <>
       <div className="d-flex justify-content-center align-items-center">
-        <SearchCitySection />
+        <SearchCitySection
+          searchCity={searchCity}
+          setSearchCity={setSearchCity}
+          searchCountry={searchCountry}
+          setSearchCountry={setSearchCountry}
+        />
+        <SearchPostcodeSection
+          searchPostcode={searchPostcode}
+          setSearchPostcode={setSearchPostcode}
+          searchCountry={searchCountry}
+          setSearchCountry={setSearchCountry}
+        />
+        <SearchLatLonSection
+          searchLat={searchLat}
+          setSearchLat={setSearchLat}
+          searchLon={searchLon}
+          setSearchLon={setSearchLon}
+        />
         <button
           type="button"
           className="btn btn-light m-2"
@@ -31,7 +58,6 @@ const SearchSection = () => {
         onChange={handleRadioSelectionChange}
       >
         <div className="p-3">
-          {' '}
           <input
             className="form-check-input"
             type="radio"
