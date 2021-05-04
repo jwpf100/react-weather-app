@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import SearchCitySection from '../SearchCitySection'
 
 const SearchSection = () => {
   const [searchTerm, setSearchTerm] = useState()
@@ -16,12 +17,7 @@ const SearchSection = () => {
   return (
     <>
       <div className="d-flex justify-content-center align-items-center">
-        <input
-          type="text"
-          onChange={handleSearchTermInput}
-          placeholder="Search Term"
-          className="p-1 m-2"
-        />
+        <SearchCitySection />
         <button
           type="button"
           className="btn btn-light m-2"
