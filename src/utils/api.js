@@ -2,9 +2,9 @@
 const weatherIconLink = 'https://www.weatherbit.io/static/img/icons/'
 
 // API Key for testing
-const APIKey = 'e90f26a7c3564efc8ea5787ca7a6b982'
+// const APIKey = 'e90f26a7c3564efc8ea5787ca7a6b982'
 // API Key
-// const APIKey = '0777401f3864415cae72a3cee34da032'
+const APIKey = '0777401f3864415cae72a3cee34da032'
 
 // Current Forecast
 const fetchDummyCurrentWeatherData = () => {

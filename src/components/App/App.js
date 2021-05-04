@@ -4,7 +4,6 @@ import SearchSection from '../SearchSection'
 import CurrentForecastDisplay from '../CurrentForecastDisplay'
 import SevenDayForecastDisplay from '../SevenDayForecastDisplay'
 import SavedSearchDisplay from '../SavedSearchDisplay'
-import SearchTextInput from '../SearchTextInput'
 
 const App = () => {
   const [currentWeatherData, setCurrentWeatherData] = useState({})
