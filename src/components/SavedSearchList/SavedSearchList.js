@@ -1,9 +1,37 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import styled from 'styled-components'
+import styled from 'styled-components'
+import {
+  fetchCurrentWeatherData,
+  fetchForecastWeatherData,
+} from '../../utils/api'
 
-const SavedSearchList = ({ className, cityName, countryName }) => {
-  const handleShowSavedSearch = () => {}
+const SavedSearchList = ({
+  className,
+  search,
+  setCurrentWeatherData,
+  setForecastWeatherData,
+}) => {
+  const handleShowSavedSearch = () => {
+    fetchCurrentWeatherData(
+      search.latInput,
+      search.lonInput,
+      search.cityInput,
+      search.stateInput,
+      search.countryInput,
+      '',
+      setCurrentWeatherData
+    )
+    fetchForecastWeatherData(
+      search.latInput,
+      search.lonInput,
+      search.cityInput,
+      search.stateInput,
+      search.countryInput,
+      '',
+      setForecastWeatherData
+    )
+  }
   const handleDeleteSearch = () => {}
 
   return (
@@ -13,7 +41,7 @@ const SavedSearchList = ({ className, cityName, countryName }) => {
         className,
       ].join(' ')}
     >
-      <div className="px-3 col-6">{cityName}</div>
+      <div className="px-3 col-6">{`${search.cityInput}, ${search.countryInput}`}</div>
       <div className="d-flex col-6 justify-content-end align-items-center">
         <button
           type="button"
@@ -34,20 +62,24 @@ const SavedSearchList = ({ className, cityName, countryName }) => {
   )
 }
 
-// const StyledForecastRowDisplay = styled(ForecastRowDisplay)`
-//   font-size: 0.75rem;
-// `
+const StyledSavedSearchList = styled(SavedSearchList)`
+  button {
+    font-size: 0.75rem;
+  }
+`
 
-export default SavedSearchList
+export default StyledSavedSearchList
 
 SavedSearchList.propTypes = {
   className: PropTypes.string,
-  cityName: PropTypes.string,
-  countryName: PropTypes.string,
+  search: PropTypes.object,
+  setCurrentWeatherData: PropTypes.func,
+  setForecastWeatherData: PropTypes.func,
 }
 
 SavedSearchList.defaultProps = {
   className: '',
-  cityName: '',
-  countryName: '',
+  search: {},
+  setCurrentWeatherData: () => {},
+  setForecastWeatherData: () => {},
 }

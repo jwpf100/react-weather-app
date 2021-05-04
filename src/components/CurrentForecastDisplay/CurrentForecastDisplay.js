@@ -9,6 +9,7 @@ const CurrentForecastDisplay = ({
   setSearchList,
 }) => {
   const handleSaveSearch = () => {
+    // On save, create an object storing the current location.  Store that in state, and add to list of saved searches.
     const currentLocationObject = {
       latInput: currentWeatherData.data[0].lat,
       lonInput: currentWeatherData.data[0].lon,

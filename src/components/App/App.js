@@ -11,23 +11,23 @@ const App = () => {
   const [currentSearch, setCurrentSearch] = useState({})
   const [searchList, setSearchList] = useState([])
 
-  const handleTestButton = () => {
-    console.log(currentWeatherData)
-    console.log(forecastWeatherData)
-    console.log(currentSearch)
-    console.log(searchList)
-  }
+  // const handleTestButton = () => {
+  //   console.log(currentWeatherData)
+  //   console.log(forecastWeatherData)
+  //   console.log(currentSearch)
+  //   console.log(searchList)
+  // }
 
   return (
     <div>
       <h1 className="text-center"> Weather App </h1>
-      <button
+      {/* <button
         type="button"
         className="btn btn-primary m-2"
         onClick={handleTestButton}
       >
         Test Array
-      </button>
+      </button> */}
       <SearchSection
         setCurrentWeatherData={setCurrentWeatherData}
         setForecastWeatherData={setForecastWeatherData}
@@ -39,7 +39,11 @@ const App = () => {
         setSearchList={setSearchList}
       />
       <SevenDayForecastDisplay forecastWeatherData={forecastWeatherData} />
-      <SavedSearchDisplay searchList={searchList} />
+      <SavedSearchDisplay
+        searchList={searchList}
+        setCurrentWeatherData={setCurrentWeatherData}
+        setForecastWeatherData={setForecastWeatherData}
+      />
     </div>
   )
 }
