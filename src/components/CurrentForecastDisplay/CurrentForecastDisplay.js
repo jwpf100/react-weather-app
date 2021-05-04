@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
-import { fetchCurrentWeatherData } from '../../utils/api'
+import { fetchCurrentWeatherData, weatherIconLink } from '../../utils/api'
 
 const CurrentForecastDisplay = () => {
   // Set State
   const [currentWeather, setCurrentWeather] = useState(
     fetchCurrentWeatherData()
   )
-
-  const weatherIconLink = 'https://www.weatherbit.io/static/img/icons/'
 
   return (
     <div>
