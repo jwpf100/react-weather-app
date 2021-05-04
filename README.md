@@ -22,6 +22,22 @@ The app looks fairly simplistic currently. My priority was getting the app to fu
 
 I started the task at approx 8.30 am. The commit that I tagged as final, was commit 6ccbbf1 at 18:41. Nb. I corrected a problem with the delete function in the commit I made shortly after this (919825e 19:25).
 
+## Installation and Setup Instructions
+
+Clone down this repository. You will need node and npm installed globally on your machine.
+
+Installation:
+
+npm install
+
+To Start React Dev Server:
+
+npm run start
+
+To Visit App:
+
+localhost:3000/weather-app
+
 ## Further Actions:
 
 I have added these to my project plan which can be seen at: https://github.com/jwpf100/react-weather-app/projects/1
@@ -36,19 +52,19 @@ Is it possible to display all search options when there are duplicates e.g. mult
 
 ## Bugs
 
-# Critical
+### Critical
 
 Leaving the search fields blank causes a fatal error
 Saved Searches - ensure that duplicates can't be added to list
 Error catching when API doesn't return with data - currently nothing happens
 
-# Important
+### Important
 
 Validation on Search Inputs (Number validation on lat/long, text on country)
 Formatting of output e.g. Lat/Lon reduce digits, date on 7 day forecast in US
 Display of seven day forecast, break into columns that are aligned
 
-# Less Urgent
+### Less Urgent
 
 Allow enter to confirm search
 Simplify the search states (eg. searchCity, searchCountry etc. in the SearchSelection component). Can an object be used instead.

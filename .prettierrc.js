@@ -1,3 +1,4 @@
+// Prettier config file
 module.exports = {
   useTabs: false,
   trailingComma: "es5",

@@ -31,6 +31,14 @@ const SearchSection = ({ setCurrentWeatherData, setForecastWeatherData }) => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault()
+    // Temporary fix.  Ensure that empty searches can't go to the API.  Validation needs to be added to prevent the error.
+    if (!searchCity && !searchPostcode) {
+      if (!searchLat || !searchLon) {
+        return alert(
+          'Please enter a city, postcode or latitude & longitude to search.  Thanks!'
+        )
+      }
+    }
     fetchCurrentWeatherData(
       searchLat,
       searchLon,
@@ -50,6 +58,7 @@ const SearchSection = ({ setCurrentWeatherData, setForecastWeatherData }) => {
       setForecastWeatherData
     )
     clearSearchInputs()
+    return null
   }
 
   // Set searchType state based on radio button selected.  This will display the relvant search section.
@@ -57,9 +66,10 @@ const SearchSection = ({ setCurrentWeatherData, setForecastWeatherData }) => {
   const handleRadioSelectionChange = (e) => setSearchType(e.target.id)
 
   return (
-    <>
+    <div className="container">
+      <h5>Please enter a search below:</h5>
       <div className="d-flex flex-wrap justify-content-center align-items-center pt-2">
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-9">
           {searchType === 'cityname' && (
             <SearchCitySection
               searchCity={searchCity}
@@ -135,7 +145,7 @@ const SearchSection = ({ setCurrentWeatherData, setForecastWeatherData }) => {
           </label>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
