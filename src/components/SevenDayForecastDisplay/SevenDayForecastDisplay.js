@@ -12,7 +12,7 @@ const CurrentForecastDisplay = ({ forecastWeatherData }) => {
 
   return (
     <>
-      {!forecastWeatherData ? (
+      {Object.keys(forecastWeatherData).length === 0 ? (
         <div>Loading</div>
       ) : (
         <div>

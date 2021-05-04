@@ -5,8 +5,10 @@ import CurrentForecastDisplay from '../CurrentForecastDisplay'
 import SevenDayForecastDisplay from '../SevenDayForecastDisplay'
 
 const App = () => {
-  const [currentWeatherData, setCurrentWeatherData] = useState('')
-  const [forecastWeatherData, setForecastWeatherData] = useState('')
+  const [currentWeatherData, setCurrentWeatherData] = useState({})
+  const [forecastWeatherData, setForecastWeatherData] = useState({})
+  const [currentSearch, setCurrentSearch] = useState({})
+  const [searchList, setSearchList] = useState([])
 
   return (
     <div>

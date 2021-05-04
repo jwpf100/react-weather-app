@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 import { weatherIconLink } from '../../utils/api'
 
 const CurrentForecastDisplay = ({ currentWeatherData }) => {
+  console.log(Object.keys(currentWeatherData))
+  console.log(Object.keys(currentWeatherData).length === 0)
   return (
     <>
-      {!currentWeatherData ? (
+      {Object.keys(currentWeatherData).length === 0 ? (
         <div>Loading</div>
       ) : (
         <div>
