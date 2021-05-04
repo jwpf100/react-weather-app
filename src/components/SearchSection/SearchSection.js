@@ -3,9 +3,12 @@ import PropTypes from 'prop-types'
 import SearchCitySection from '../SearchCitySection'
 import SearchPostcodeSection from '../SearchPostcodeSection'
 import SearchLatLonSection from '../SearchLatLonSection'
-import { fetchCurrentWeatherData } from '../../utils/api'
+import {
+  fetchCurrentWeatherData,
+  fetchForecastWeatherData,
+} from '../../utils/api'
 
-const SearchSection = ({ setCurrentWeatherData }) => {
+const SearchSection = ({ setCurrentWeatherData, setForecastWeatherData }) => {
   const [searchCity, setSearchCity] = useState('')
   const [searchAltState, setAltState] = useState('')
   const [searchCountry, setSearchCountry] = useState('')
@@ -36,6 +39,15 @@ const SearchSection = ({ setCurrentWeatherData }) => {
       searchCountry,
       searchPostcode,
       setCurrentWeatherData
+    )
+    fetchForecastWeatherData(
+      searchLat,
+      searchLon,
+      searchCity,
+      searchAltState,
+      searchCountry,
+      searchPostcode,
+      setForecastWeatherData
     )
     clearSearchInputs()
   }
@@ -127,8 +139,10 @@ export default SearchSection
 
 SearchSection.propTypes = {
   setCurrentWeatherData: PropTypes.func,
+  setForecastWeatherData: PropTypes.func,
 }
 
 SearchSection.defaultProps = {
   setCurrentWeatherData: () => {},
+  setForecastWeatherData: () => {},
 }

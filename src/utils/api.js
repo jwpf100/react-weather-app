@@ -777,6 +777,8 @@ const fetchDummyForecastWeatherData = () => {
   return forecastData
 }
 
+// API searched based on inputs from user.  Blank inputs don't impact the API search, although blanks need to be entered from the search section so that an error isn't recieved from the API.
+
 const fetchCurrentWeatherData = async (
   latInput,
   lonInput,
@@ -791,13 +793,34 @@ const fetchCurrentWeatherData = async (
   const currentWeatherData = await fetch(requestCurrentData).then((response) =>
     response.json()
   )
-  console.log('Running fetchCurrentWeatherData')
+  // set State in the main app
   setCurrentWeatherData(currentWeatherData)
+}
+
+// API searched based on inputs from user.  Blank inputs don't impact the API search, although blanks need to be entered from the search section so that an error isn't recieved from the API.
+
+const fetchForecastWeatherData = async (
+  latInput,
+  lonInput,
+  cityInput,
+  stateInput,
+  countryInput,
+  postcodeInput,
+  setForecastWeatherData
+) => {
+  const requestForecastData = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${latInput}&lon=${lonInput}&city=${cityInput}&postal_code=${postcodeInput}&state=${stateInput}&country=${countryInput}&key=${APIKey}&include=minutely`
+
+  const forecastData = await fetch(requestForecastData).then((response) =>
+    response.json()
+  )
+  // set State in the main app
+  setForecastWeatherData(forecastData)
 }
 
 export {
   fetchDummyCurrentWeatherData,
   fetchDummyForecastWeatherData,
   fetchCurrentWeatherData,
+  fetchForecastWeatherData,
   weatherIconLink,
 }
