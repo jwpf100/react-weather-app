@@ -85,7 +85,7 @@ const SearchSection = ({ setCurrentWeatherData, setForecastWeatherData }) => {
         )}
         <button
           type="button"
-          className="btn btn-light m-2"
+          className="btn btn-primary m-2"
           onClick={handleSearchSubmit}
         >
           Search
