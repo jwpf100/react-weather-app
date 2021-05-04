@@ -4,6 +4,7 @@ import SearchSection from '../SearchSection'
 import CurrentForecastDisplay from '../CurrentForecastDisplay'
 import SevenDayForecastDisplay from '../SevenDayForecastDisplay'
 import SavedSearchDisplay from '../SavedSearchDisplay'
+import SearchTextInput from '../SearchTextInput'
 
 const App = () => {
   const [currentWeatherData, setCurrentWeatherData] = useState({})
@@ -14,13 +15,6 @@ const App = () => {
   return (
     <div>
       <h1 className="text-center"> Weather App </h1>
-      {/* <button
-        type="button"
-        className="btn btn-primary m-2"
-        onClick={handleTestButton}
-      >
-        Test Array
-      </button> */}
       <SearchSection
         setCurrentWeatherData={setCurrentWeatherData}
         setForecastWeatherData={setForecastWeatherData}

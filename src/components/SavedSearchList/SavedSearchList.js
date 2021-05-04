@@ -35,12 +35,13 @@ const SavedSearchList = ({
     )
   }
 
-  const handleDeleteSearch = () => {
-    // Find index of search.city in array
-
-    const indexToDelete = searchList.findIndex(
+  const deleteFromList = () => {
+    const newList = [...searchList]
+    const indexToDelete = newList.findIndex(
       (element) => element.uniqueID === search.uniqueID
     )
+    newList.splice(indexToDelete, 1)
+    setSearchList(newList)
   }
 
   return (
@@ -62,7 +63,7 @@ const SavedSearchList = ({
         <button
           type="button"
           className="btn btn-danger m-2"
-          onClick={() => handleDeleteSearch(search, searchList, setSearchList)}
+          onClick={deleteFromList}
         >
           Delete
         </button>
