@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import SearchTextInput from '../SearchTextInput'
+import RegularButton from '../RegularButton'
 import {
   fetchCurrentWeatherData,
   fetchForecastWeatherData,
@@ -73,7 +73,7 @@ const SearchSection = ({
     <div className="container">
       <div className="row justify-content-center align-items-center">
         {/* Outputs text inputs depending on which redio button selected */}
-        <div className="d-flex flex-wrap col-9 col-md-9 pe-2">
+        <div className="d-flex flex-wrap col-9 col-md-9 pe-2 ">
           <SearchInputSection
             searchType={searchType}
             searchCity={searchCity}
@@ -89,13 +89,7 @@ const SearchSection = ({
           />
         </div>
         <div className="d-flex col-3 col-md-3 justify-content-center align-items-center ps-1">
-          <button
-            type="button"
-            className="btn btn-clear-dark text-white w-100 px-0"
-            onClick={handleSearchSubmit}
-          >
-            Search
-          </button>
+          <RegularButton onClick={handleSearchSubmit}>Search</RegularButton>
         </div>
       </div>
       <div
