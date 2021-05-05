@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+## Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A weather application designed to do the following:
 
-## Available Scripts
+- Allow user to search by location, postcode, or lat/lng
+- Display current weather and 7 day forecast for each location searched
+- User can save searched locations
+- Saved locations are listed for the user
+- Saved locations can be removed
 
-In the project directory, you can run:
+## Approach and considerations
 
-### `yarn start`
+I decided to use React, Bootstrap and a component oriented programming method to complete this project. The layout of a weather app seems naturally made up of small components which can be reused such as the search elements, individual forecast displays etc. so React seems like a good choice for the front end. State and hooks also provide the tools to deal with data changing regularly as calls to the api are made. In addtion I am comfortable with React and Bootstrap, and using them together with ESLint, prettier and styled components allowed me to quickly set up a development environment and focus on the task at hand.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For the purposes of the task, I've decided to focus on the front end, and not add a back end to manage interactions with the API. This would be a consideration with more time, as using React means that the API key is exposed to the users which is a security risk. There are alternatives that I can look at which would include using private routes, or to add a server, probably using express, to handle the API calls.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I was also planning to add local storage to the app, in order for user's saved searches to be availabe when they return to the app. There are alternatives as well, such as adding a database, but the simplest solution would be to save the currentSearch and searchList array to local storage, and access it when the app opens. I didn't have time to add this in the time limit of the exercise but will add it after.
 
-### `yarn test`
+The app looks fairly simplistic currently. My priority was getting the app to function correctly, there is scope to improve the aesthetics in the future.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Final Commit (End of the day)
 
-### `yarn build`
+I started the task at approx 8.30 am. The commit that I tagged as final, was commit 6ccbbf1 at 18:41. Nb. I corrected a problem with the delete function in the commit I made shortly after this (919825e 19:25).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Changes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Local storage function added 9am 05/05/2021
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation and Setup Instructions
 
-### `yarn eject`
+Clone down this repository. You will need node and npm installed globally on your machine.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Installation:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To Start React Dev Server:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+npm run start
 
-## Learn More
+To Visit App:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+localhost:3000/weather-app
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Further Actions:
 
-### Code Splitting
+I have added these to my project plan which can be seen at: https://github.com/jwpf100/react-weather-app/projects/1
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Additional Tasks
 
-### Analyzing the Bundle Size
+Option to change units
+Host the weather images, currently there is a slowdown as they load.
+Change language of response/total solution. API can provide in multiple languages.
+Search when typing paused (type and wait) rather than relying on search button.
+Is it possible to display all search options when there are duplicates e.g. multiple Londons, showing all and being able to choose would be a better user experience.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Bugs
 
-### Making a Progressive Web App
+### Critical
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Leaving the search fields blank causes a fatal error
+Saved Searches - ensure that duplicates can't be added to list
+Error catching when API doesn't return with data - currently nothing happens
 
-### Advanced Configuration
+### Important
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Validation on Search Inputs (Number validation on lat/long, text on country)
+Formatting of output e.g. Lat/Lon reduce digits, date on 7 day forecast in US
+Display of seven day forecast, break into columns that are aligned
 
-### Deployment
+### Less Urgent
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Allow enter to confirm search
+Simplify the search states (eg. searchCity, searchCountry etc. in the SearchSelection component). Can an object be used instead.
