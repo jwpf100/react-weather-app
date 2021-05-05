@@ -37,6 +37,9 @@ const ForecastRowDisplay = ({
 
 const StyledForecastRowDisplay = styled(ForecastRowDisplay)`
   font-size: 0.75rem;
+  img {
+    max-width: 90px;
+  }
 `
 
 export default StyledForecastRowDisplay

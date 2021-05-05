@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 const SearchRadioSelection = ({ onChange }) => {
   return (
     <div
-      className="justify-content-center align-items-center form-check form-check-inline my-2"
+      className="d-flex justify-content-center justify-content-md-start align-items-center form-check form-check-inline my-2"
       onChange={onChange}
     >
-      <div className="form-check form-check-inline">
+      <div className="form-check form-check-inline p-0">
         <label htmlFor="cityname" className="">
           City
           <input

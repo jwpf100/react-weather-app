@@ -46,27 +46,37 @@ const App = () => {
   }, [searchList])
 
   return (
-    <div className="bg-clear bg-gradient">
-      <MainHeading>Weather</MainHeading>
-      <SearchSection
-        setCurrentWeatherData={setCurrentWeatherData}
-        setForecastWeatherData={setForecastWeatherData}
-        setCurrentSearch={setCurrentSearch}
-        setSearchList={setSearchList}
-      />
-      <CurrentForecastDisplay
-        currentWeatherData={currentWeatherData}
-        searchList={searchList}
-        setSearchList={setSearchList}
-      />
-      <SevenDayForecastDisplay forecastWeatherData={forecastWeatherData} />
-      <SavedSearchDisplay
-        searchList={searchList}
-        setCurrentWeatherData={setCurrentWeatherData}
-        setForecastWeatherData={setForecastWeatherData}
-        setCurrentSearch={setCurrentSearch}
-        setSearchList={setSearchList}
-      />
+    <div className="bg-clear-dark bg-gradient">
+      {/* <MainHeading>Weather</MainHeading> */}
+      <div className="container">
+        <SearchSection
+          setCurrentWeatherData={setCurrentWeatherData}
+          setForecastWeatherData={setForecastWeatherData}
+          setCurrentSearch={setCurrentSearch}
+          setSearchList={setSearchList}
+        />
+      </div>
+      <div className="container d-md-flex">
+        <div className="col-12 col-md-6">
+          <CurrentForecastDisplay
+            currentWeatherData={currentWeatherData}
+            searchList={searchList}
+            setSearchList={setSearchList}
+          />
+        </div>
+        <div className="col-12 col-md-6">
+          <SevenDayForecastDisplay forecastWeatherData={forecastWeatherData} />
+        </div>
+      </div>
+      <div className="container">
+        <SavedSearchDisplay
+          searchList={searchList}
+          setCurrentWeatherData={setCurrentWeatherData}
+          setForecastWeatherData={setForecastWeatherData}
+          setCurrentSearch={setCurrentSearch}
+          setSearchList={setSearchList}
+        />
+      </div>
     </div>
   )
 }

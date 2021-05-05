@@ -10,7 +10,7 @@ const CurrentForecastDisplay = ({ forecastWeatherData }) => {
       {Object.keys(forecastWeatherData).length === 0 ? (
         <div />
       ) : (
-        <div className="container my-3 py-3">
+        <div className="container bg-clear bg-gradient h-100 py-3 mt-3">
           {range(1, 7).map((day) => (
             <ForecastRowDisplay
               key={day}

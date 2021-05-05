@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import SearchTextInput from '../SearchTextInput'
 
@@ -40,30 +40,38 @@ const SearchInputSection = ({
       )}
       {searchType === 'postcode' && (
         <>
-          <SearchTextInput
-            search={searchPostcode}
-            setSearch={setSearchPostcode}
-            placeholder="Postcode"
-          />
-          <SearchTextInput
-            search={searchCountry}
-            setSearch={setSearchCountry}
-            placeholder="Country (Optional)"
-          />
+          <div className="col-12 col-md-6 pb-1 pb-md-0 pe-md-1">
+            <SearchTextInput
+              search={searchPostcode}
+              setSearch={setSearchPostcode}
+              placeholder="Postcode"
+            />
+          </div>
+          <div className="col-12 col-md-6 pb-1 pb-md-0 pe-md-1">
+            <SearchTextInput
+              search={searchCountry}
+              setSearch={setSearchCountry}
+              placeholder="Country (Optional)"
+            />
+          </div>
         </>
       )}
       {searchType === 'latlong' && (
         <>
-          <SearchTextInput
-            search={searchLat}
-            setSearch={setSearchLat}
-            placeholder="Latitude"
-          />
-          <SearchTextInput
-            search={searchLon}
-            setSearch={setSearchLon}
-            placeholder="Longitude"
-          />
+          <div className="col-12 col-md-6 pb-1 pb-md-0 pe-md-1">
+            <SearchTextInput
+              search={searchLat}
+              setSearch={setSearchLat}
+              placeholder="Latitude"
+            />
+          </div>
+          <div className="col-12 col-md-6 pb-1 pb-md-0 pe-md-1">
+            <SearchTextInput
+              search={searchLon}
+              setSearch={setSearchLon}
+              placeholder="Longitude"
+            />
+          </div>
         </>
       )}
     </>
@@ -94,8 +102,8 @@ SearchInputSection.defaultProps = {
   setSearchCountry: () => {},
   searchPostcode: '',
   setSearchPostcode: () => {},
-  searchLat: 0,
+  searchLat: '',
   setSearchLat: () => {},
-  searchLon: 0,
+  searchLon: '',
   setSearchLon: () => {},
 }
