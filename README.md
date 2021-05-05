@@ -51,11 +51,13 @@ I have added these to my project plan which can be seen at: https://github.com/j
 
 ## Additional Tasks
 
+- add loading placeholders to maintain shape of app
 - Option to change units
 - Host the weather images, currently there is a slowdown as they load.
 - Change language of response/total solution. API can provide in multiple languages.
 - Search when typing paused (type and wait) rather than relying on search button.
 - Is it possible to display all search options when there are duplicates e.g. multiple Londons, showing all and being able to choose would be a better user experience.
+- store weather icons locally
 
 ## Bugs/Limitations
 

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import SearchCitySection from '../SearchCitySection'
-import SearchPostcodeSection from '../SearchPostcodeSection'
-import SearchLatLonSection from '../SearchLatLonSection'
+import RegularButton from '../RegularButton'
 import {
   fetchCurrentWeatherData,
   fetchForecastWeatherData,
 } from '../../utils/api'
+import SearchInputSection from '../SearchInputSection'
+import SearchRadioSection from '../SearchRadioSection'
 
 const SearchSection = ({
   setCurrentWeatherData,
@@ -27,8 +27,8 @@ const SearchSection = ({
     setSearchCity('')
     setSearchPostcode('')
     setSearchCountry('')
-    setSearchLat('')
-    setSearchLon('')
+    setSearchLat()
+    setSearchLon()
   }
 
   // Handle the search submit button
@@ -71,85 +71,31 @@ const SearchSection = ({
   const handleRadioSelectionChange = (e) => setSearchType(e.target.id)
 
   return (
-    <div className="container">
-      <h5>Please enter a search below:</h5>
-      <div className="d-flex flex-wrap justify-content-center align-items-center pt-2">
-        <div className="col-12 col-md-9">
-          {searchType === 'cityname' && (
-            <SearchCitySection
-              searchCity={searchCity}
-              setSearchCity={setSearchCity}
-              searchCountry={searchCountry}
-              setSearchCountry={setSearchCountry}
-            />
-          )}
-          {searchType === 'postcode' && (
-            <SearchPostcodeSection
-              searchPostcode={searchPostcode}
-              setSearchPostcode={setSearchPostcode}
-              searchCountry={searchCountry}
-              setSearchCountry={setSearchCountry}
-            />
-          )}
-          {searchType === 'latlong' && (
-            <SearchLatLonSection
-              searchLat={searchLat}
-              setSearchLat={setSearchLat}
-              searchLon={searchLon}
-              setSearchLon={setSearchLon}
-            />
-          )}
+    <div className="container mt-3 py-3 bg-clear bg-gradient">
+      <div className="row justify-content-center align-items-center">
+        {/* Outputs text inputs depending on which redio button selected */}
+        <div className="d-flex flex-wrap col-9 col-md-9 pe-2">
+          <SearchInputSection
+            searchType={searchType}
+            searchCity={searchCity}
+            setSearchCity={setSearchCity}
+            searchCountry={searchCountry}
+            setSearchCountry={setSearchCountry}
+            searchPostcode={searchPostcode}
+            setSearchPostcode={setSearchPostcode}
+            searchLat={searchLat}
+            setSearchLat={setSearchLat}
+            searchLon={searchLon}
+            setSearchLon={setSearchLon}
+          />
         </div>
-        <div className="d-flex col-12 col-md-3 justify-content-center align-items-center">
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={handleSearchSubmit}
-          >
+        <div className="d-flex col-3 col-md-3 justify-content-center align-items-center ps-1">
+          <RegularButton onClick={handleSearchSubmit} bsClass="btn-clear">
             Search
-          </button>
+          </RegularButton>
         </div>
       </div>
-      <div
-        className="d-flex justify-content-center align-items-center form-check"
-        onChange={handleRadioSelectionChange}
-      >
-        <div className="p-3">
-          <label htmlFor="cityname" className="">
-            City Name
-            <input
-              className="form-check-input mx-1"
-              type="radio"
-              name="flexRadioDefault"
-              id="cityname"
-              defaultChecked
-            />
-          </label>
-        </div>
-        <div className="p-3">
-          <label htmlFor="postcode">
-            Postcode
-            <input
-              className="form-check-input mx-1"
-              type="radio"
-              name="flexRadioDefault"
-              id="postcode"
-            />
-          </label>
-        </div>
-
-        <div className="p-3">
-          <label htmlFor="latlong">
-            Latitude & Longitude
-            <input
-              className="form-check-input mx-1"
-              type="radio"
-              name="flexRadioDefault"
-              id="latlong"
-            />
-          </label>
-        </div>
-      </div>
+      <SearchRadioSection onChange={handleRadioSelectionChange} />
     </div>
   )
 }
