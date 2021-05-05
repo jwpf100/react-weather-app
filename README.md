@@ -16,7 +16,7 @@ For the purposes of the task, I've decided to focus on the front end, and not ad
 
 I was also planning to add local storage to the app, in order for user's saved searches to be availabe when they return to the app. There are alternatives as well, such as adding a database, but the simplest solution would be to save the currentSearch and searchList array to local storage, and access it when the app opens. I didn't have time to add this in the time limit of the exercise but will add it after.
 
-The app looks fairly simplistic currently. My priority was getting the app to function correctly, there is scope to improve the aesthetics of the app.
+The app looks fairly simplistic currently. My priority was getting the app to function correctly, there is scope to improve the aesthetics in the future.
 
 ## Final Commit (End of the day)
 

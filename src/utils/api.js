@@ -1,3 +1,5 @@
+import { createWeatherObject } from './data'
+
 // Test Data
 const weatherIconLink = 'https://www.weatherbit.io/static/img/icons/'
 
@@ -786,7 +788,8 @@ const fetchCurrentWeatherData = async (
   stateInput,
   countryInput,
   postcodeInput,
-  setCurrentWeatherData
+  setCurrentWeatherData,
+  setCurrentSearch
 ) => {
   const requestCurrentData = `https://api.weatherbit.io/v2.0/current?lat=${latInput}&lon=${lonInput}&city=${cityInput}&postal_code=${postcodeInput}&state=${stateInput}&country=${countryInput}&key=${APIKey}&include=minutely`
 
@@ -795,6 +798,8 @@ const fetchCurrentWeatherData = async (
   )
   // set State in the main app
   setCurrentWeatherData(currentWeatherData)
+  const currentLocationObject = createWeatherObject(currentWeatherData)
+  setCurrentSearch(currentLocationObject)
 }
 
 // API searched based on inputs from user.  Blank inputs don't impact the API search, although blanks need to be entered from the search section so that an error isn't recieved from the API.
