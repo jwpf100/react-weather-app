@@ -6,6 +6,7 @@ const CurrentForecastDisplay = ({
   searchList,
   setCurrentWeatherData,
   setForecastWeatherData,
+  setCurrentSearch,
   setSearchList,
 }) => {
   return (
@@ -14,8 +15,7 @@ const CurrentForecastDisplay = ({
         <div className="container">No Saved Searchs</div>
       ) : (
         <div>
-          <div className="container border">
-            <h4 className="text-center">Saved Searches</h4>
+          <div className="container bg-clear-dark bg-gradient mt-3 py-3 ">
             {searchList.map((search) => (
               <SavedSearchList
                 search={search}
@@ -23,6 +23,7 @@ const CurrentForecastDisplay = ({
                 setCurrentWeatherData={setCurrentWeatherData}
                 setForecastWeatherData={setForecastWeatherData}
                 setSearchList={setSearchList}
+                setCurrentSearch={setCurrentSearch}
               />
             ))}
           </div>
@@ -38,6 +39,7 @@ CurrentForecastDisplay.propTypes = {
   searchList: PropTypes.array,
   setCurrentWeatherData: PropTypes.func,
   setForecastWeatherData: PropTypes.func,
+  setCurrentSearch: PropTypes.func,
   setSearchList: PropTypes.func,
 }
 
@@ -45,5 +47,6 @@ CurrentForecastDisplay.defaultProps = {
   searchList: [],
   setCurrentWeatherData: () => {},
   setForecastWeatherData: () => {},
+  setCurrentSearch: () => {},
   setSearchList: () => {},
 }

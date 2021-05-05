@@ -8,15 +8,13 @@ const SearchTextInput = ({ search, setSearch, placeholder }) => {
 
   return (
     <>
-      <div className="">
-        <input
-          type="text"
-          value={search}
-          onChange={handleSearchTerm}
-          placeholder={placeholder}
-          className="m-1"
-        />
-      </div>
+      <input
+        type="text"
+        value={search}
+        onChange={handleSearchTerm}
+        placeholder={placeholder}
+        className="w-100 bg-clear-light border-1 border-clear-light rounded"
+      />
     </>
   )
 }

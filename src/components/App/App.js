@@ -9,6 +9,7 @@ import {
   storeLocationListLocal,
 } from '../../utils/localstorage'
 import FetchLocalData from '../../hooks/FetchLocalData'
+import MainHeading from '../Display/MainHeading'
 
 const App = () => {
   const {
@@ -44,27 +45,41 @@ const App = () => {
     }
   }, [searchList])
 
+  console.log(currentSearch)
+  console.log(currentSearch === undefined)
   return (
-    <div>
-      <h1 className="text-center"> Weather App </h1>
-      <SearchSection
-        setCurrentWeatherData={setCurrentWeatherData}
-        setForecastWeatherData={setForecastWeatherData}
-        setCurrentSearch={setCurrentSearch}
-        setSearchList={setSearchList}
-      />
-      <CurrentForecastDisplay
-        currentWeatherData={currentWeatherData}
-        searchList={searchList}
-        setSearchList={setSearchList}
-      />
-      <SevenDayForecastDisplay forecastWeatherData={forecastWeatherData} />
-      <SavedSearchDisplay
-        searchList={searchList}
-        setCurrentWeatherData={setCurrentWeatherData}
-        setForecastWeatherData={setForecastWeatherData}
-        setSearchList={setSearchList}
-      />
+    <div className="bg-clear-dark bg-gradient">
+      {currentSearch === undefined && <MainHeading>Weather</MainHeading>}
+
+      <div className="container">
+        <SearchSection
+          setCurrentWeatherData={setCurrentWeatherData}
+          setForecastWeatherData={setForecastWeatherData}
+          setCurrentSearch={setCurrentSearch}
+          setSearchList={setSearchList}
+        />
+      </div>
+      <div className="container d-md-flex">
+        <div className="col-12 col-md-6">
+          <CurrentForecastDisplay
+            currentWeatherData={currentWeatherData}
+            searchList={searchList}
+            setSearchList={setSearchList}
+          />
+        </div>
+        <div className="col-12 col-md-6">
+          <SevenDayForecastDisplay forecastWeatherData={forecastWeatherData} />
+        </div>
+      </div>
+      <div className="container">
+        <SavedSearchDisplay
+          searchList={searchList}
+          setCurrentWeatherData={setCurrentWeatherData}
+          setForecastWeatherData={setForecastWeatherData}
+          setCurrentSearch={setCurrentSearch}
+          setSearchList={setSearchList}
+        />
+      </div>
     </div>
   )
 }

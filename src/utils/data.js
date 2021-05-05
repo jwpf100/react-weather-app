@@ -12,4 +12,19 @@ const createWeatherObject = (currentWeatherData) => {
   return currentLocationObject
 }
 
-export { createWeatherObject }
+const checkIfDuplicate = (searchItem, newList) => {
+  const found = newList.findIndex(
+    (element) => element.uniqueID === searchItem.uniqueID
+  )
+  return found !== -1
+}
+const addToSearchList = (currentWeatherData, searchList, setSearchList) => {
+  // On save, create an object storing the current location.  Store that in state, and add to list of saved searches.
+  const currentLocationObject = createWeatherObject(currentWeatherData)
+  // setSearchList([...searchList, currentLocationObject])
+  if (!checkIfDuplicate(currentLocationObject, searchList)) {
+    setSearchList([...searchList, currentLocationObject])
+  }
+}
+
+export { createWeatherObject, addToSearchList }

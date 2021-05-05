@@ -5,6 +5,7 @@ import {
   fetchCurrentWeatherData,
   fetchForecastWeatherData,
 } from '../../utils/api'
+import RegularButton from '../RegularButton'
 
 const SavedSearchList = ({
   className,
@@ -13,6 +14,7 @@ const SavedSearchList = ({
   setCurrentWeatherData,
   setForecastWeatherData,
   setSearchList,
+  setCurrentSearch,
 }) => {
   const handleShowSavedSearch = () => {
     fetchCurrentWeatherData(
@@ -22,7 +24,8 @@ const SavedSearchList = ({
       search.stateInput,
       search.countryInput,
       '',
-      setCurrentWeatherData
+      setCurrentWeatherData,
+      setCurrentSearch
     )
     fetchForecastWeatherData(
       search.latInput,
@@ -51,22 +54,18 @@ const SavedSearchList = ({
         className,
       ].join(' ')}
     >
-      <div className="px-3 col-6">{`${search.cityInput}, ${search.countryInput}`}</div>
-      <div className="d-flex col-6 justify-content-end align-items-center">
-        <button
-          type="button"
-          className="btn btn-primary m-2"
-          onClick={handleShowSavedSearch}
-        >
-          Show Weather
-        </button>
-        <button
-          type="button"
-          className="btn btn-danger m-2"
-          onClick={deleteFromList}
-        >
-          Delete
-        </button>
+      <div className="fw-light px-3 col-8">{`${search.cityInput}, ${search.countryInput}`}</div>
+      <div className="d-flex col-4 justify-content-end align-items-center">
+        <div className="col-6 p-1 my-1">
+          <RegularButton onClick={handleShowSavedSearch} bsClass="btn-clear">
+            Show
+          </RegularButton>
+        </div>
+        <div className="col-6 p-1">
+          <RegularButton onClick={deleteFromList} bsClass="btn-danger">
+            Delete
+          </RegularButton>
+        </div>
       </div>
     </div>
   )
@@ -87,6 +86,7 @@ SavedSearchList.propTypes = {
   setCurrentWeatherData: PropTypes.func,
   setForecastWeatherData: PropTypes.func,
   setSearchList: PropTypes.func,
+  setCurrentSearch: PropTypes.func,
 }
 
 SavedSearchList.defaultProps = {
@@ -96,4 +96,5 @@ SavedSearchList.defaultProps = {
   setCurrentWeatherData: () => {},
   setForecastWeatherData: () => {},
   setSearchList: () => {},
+  setCurrentSearch: () => {},
 }
