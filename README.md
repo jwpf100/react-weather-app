@@ -26,7 +26,8 @@ I started the task at approx 8.30 am. The commit that I tagged as final, was com
 
 - Fixed bug when searching with blank search terms - 3065469 - 22:30
 - Local storage function added - fae4e8a - 9am 05/05/2021
-- Fixed bug with Show Weather button in saved searches - c4c746c - 12:00 05/05/2021
+- Fixed bug with Show Weather button in saved searches - c4c746c - 12:00 06/05/2021
+- Save search now checks and blocks duplicates - fa81cef - 06/05/21
 
 ## Installation and Setup Instructions
 
