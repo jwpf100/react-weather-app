@@ -24,7 +24,7 @@ I started the task at approx 8.30 am. The commit that I tagged as final, was com
 
 ## Changes
 
-Local storage function added 9am 05/05/2021
+- Local storage function added 9am 05/05/2021
 
 ## Installation and Setup Instructions
 
@@ -48,28 +48,28 @@ I have added these to my project plan which can be seen at: https://github.com/j
 
 ## Additional Tasks
 
-Option to change units
-Host the weather images, currently there is a slowdown as they load.
-Change language of response/total solution. API can provide in multiple languages.
-Search when typing paused (type and wait) rather than relying on search button.
-Is it possible to display all search options when there are duplicates e.g. multiple Londons, showing all and being able to choose would be a better user experience.
+- Option to change units
+- Host the weather images, currently there is a slowdown as they load.
+- Change language of response/total solution. API can provide in multiple languages.
+- Search when typing paused (type and wait) rather than relying on search button.
+- Is it possible to display all search options when there are duplicates e.g. multiple Londons, showing all and being able to choose would be a better user experience.
 
 ## Bugs/Limitations
 
 ### Critical
 
-Leaving the search fields blank causes a fatal error [EDIT: FIXED]
-Saved Searches - ensure that duplicates can't be added to list
+- Leaving the search fields blank causes a fatal error [EDIT: FIXED]
+- Saved Searches - ensure that duplicates can't be added to list
 
 ### Important
 
-Error catching when API doesn't return with data - currently nothing happens
-Validation on Search Inputs (Number validation on lat/long, text on country)
-Design/Appearance needs to be improved, currently the app looks very basic
-Formatting of output e.g. Lat/Lon reduce digits, date on 7 day forecast in US
-Display of seven day forecast, break into columns that are aligned
+- Error catching when API doesn't return with data - currently nothing happens
+- Validation on Search Inputs (Number validation on lat/long, text on country)
+- Design/Appearance needs to be improved, currently the app looks very basic
+- Formatting of output e.g. Lat/Lon reduce digits, date on 7 day forecast in US
+- Display of seven day forecast, break into columns that are aligned
 
 ### Less Urgent
 
-Allow enter to confirm search
-Simplify the search states (eg. searchCity, searchCountry etc. in the SearchSelection component). Can an object be used instead.
+- Allow enter to confirm search
+- Simplify the search states (eg. searchCity, searchCountry etc. in the SearchSelection component). Can an object be used instead.
