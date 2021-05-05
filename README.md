@@ -14,7 +14,7 @@ I decided to use React, Bootstrap and a component oriented programming method to
 
 For the purposes of the task, I've decided to focus on the front end, and not add a back end to manage interactions with the API. This would be a consideration with more time, as using React means that the API key is exposed to the users which is a security risk. There are alternatives that I can look at which would include using private routes, or to add a server, probably using express, to handle the API calls.
 
-I was also planning to add local storage to the app, in order for user's saved searches to be availabe when they return to the app. There are alternatives as well, such as adding a database, but the simplest solution would be to save the currentSearch and searchList array to local storage, and access it when the app opens. I didn't have time to add this in the time limit of the exercise but will add it after.
+I was also planning to add local storage to the app, in order for user's saved searches to be availabe when they return to the app. There are alternatives as well, such as adding a database, but the simplest solution would be to save the currentSearch and searchList array to local storage, and access it when the app opens. I didn't have time to add this in the time limit of the exercise but will add it after. [EDIT: this has been added to the most recent version]
 
 The app looks fairly simplistic currently. My priority was getting the app to function correctly, there is scope to improve the aesthetics in the future.
 
@@ -54,17 +54,18 @@ Change language of response/total solution. API can provide in multiple language
 Search when typing paused (type and wait) rather than relying on search button.
 Is it possible to display all search options when there are duplicates e.g. multiple Londons, showing all and being able to choose would be a better user experience.
 
-## Bugs
+## Bugs/Limitations
 
 ### Critical
 
-Leaving the search fields blank causes a fatal error
+Leaving the search fields blank causes a fatal error - FIXED
 Saved Searches - ensure that duplicates can't be added to list
-Error catching when API doesn't return with data - currently nothing happens
 
 ### Important
 
+Error catching when API doesn't return with data - currently nothing happens
 Validation on Search Inputs (Number validation on lat/long, text on country)
+Design/Appearance needs to be improved, currently the app looks very basic
 Formatting of output e.g. Lat/Lon reduce digits, date on 7 day forecast in US
 Display of seven day forecast, break into columns that are aligned
 
