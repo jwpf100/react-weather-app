@@ -46,7 +46,7 @@ const App = () => {
   }, [searchList])
 
   return (
-    <div>
+    <div className="bg-clear bg-gradient">
       <MainHeading>Weather App</MainHeading>
       <SearchSection
         setCurrentWeatherData={setCurrentWeatherData}

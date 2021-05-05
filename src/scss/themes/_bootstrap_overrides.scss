@@ -1,0 +1,18 @@
+//Create custom map
+$custom-colors: (
+  'clear': #73bae1,
+);
+
+// Merge with bootstrap theme
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// Main text colour
+
+$body-color: white;
+
+/*
+clear
+#54a6dc
+#73bae1
+*/
