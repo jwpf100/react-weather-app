@@ -13,6 +13,7 @@ const SavedSearchList = ({
   setCurrentWeatherData,
   setForecastWeatherData,
   setSearchList,
+  setCurrentSearch,
 }) => {
   const handleShowSavedSearch = () => {
     fetchCurrentWeatherData(
@@ -22,7 +23,8 @@ const SavedSearchList = ({
       search.stateInput,
       search.countryInput,
       '',
-      setCurrentWeatherData
+      setCurrentWeatherData,
+      setCurrentSearch
     )
     fetchForecastWeatherData(
       search.latInput,
@@ -87,6 +89,7 @@ SavedSearchList.propTypes = {
   setCurrentWeatherData: PropTypes.func,
   setForecastWeatherData: PropTypes.func,
   setSearchList: PropTypes.func,
+  setCurrentSearch: PropTypes.func,
 }
 
 SavedSearchList.defaultProps = {
@@ -96,4 +99,5 @@ SavedSearchList.defaultProps = {
   setCurrentWeatherData: () => {},
   setForecastWeatherData: () => {},
   setSearchList: () => {},
+  setCurrentSearch: () => {},
 }

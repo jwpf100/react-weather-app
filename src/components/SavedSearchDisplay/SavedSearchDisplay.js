@@ -6,6 +6,7 @@ const CurrentForecastDisplay = ({
   searchList,
   setCurrentWeatherData,
   setForecastWeatherData,
+  setCurrentSearch,
   setSearchList,
 }) => {
   return (
@@ -23,6 +24,7 @@ const CurrentForecastDisplay = ({
                 setCurrentWeatherData={setCurrentWeatherData}
                 setForecastWeatherData={setForecastWeatherData}
                 setSearchList={setSearchList}
+                setCurrentSearch={setCurrentSearch}
               />
             ))}
           </div>
@@ -38,6 +40,7 @@ CurrentForecastDisplay.propTypes = {
   searchList: PropTypes.array,
   setCurrentWeatherData: PropTypes.func,
   setForecastWeatherData: PropTypes.func,
+  setCurrentSearch: PropTypes.func,
   setSearchList: PropTypes.func,
 }
 
@@ -45,5 +48,6 @@ CurrentForecastDisplay.defaultProps = {
   searchList: [],
   setCurrentWeatherData: () => {},
   setForecastWeatherData: () => {},
+  setCurrentSearch: () => {},
   setSearchList: () => {},
 }
