@@ -1,7 +1,9 @@
 //Create custom map
 $custom-colors: (
+  'gray': $gray-600,
   'clear': #73bae1,
   'clear-light': #c4e2f2,
+  'clear-dark': #54a6dc,
 );
 
 // Merge with bootstrap theme
@@ -11,6 +13,9 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 // Main text colour
 
 $body-color: white;
+
+// Input Place Holder override
+// $input-placeholder-color: black;
 
 /*
 clear

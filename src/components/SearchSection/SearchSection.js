@@ -5,6 +5,7 @@ import {
   fetchCurrentWeatherData,
   fetchForecastWeatherData,
 } from '../../utils/api'
+import SearchInputSection from '../SearchInputSection'
 
 const SearchSection = ({
   setCurrentWeatherData,
@@ -25,8 +26,8 @@ const SearchSection = ({
     setSearchCity('')
     setSearchPostcode('')
     setSearchCountry('')
-    setSearchLat('')
-    setSearchLon('')
+    setSearchLat()
+    setSearchLon()
   }
 
   // Handle the search submit button
@@ -70,56 +71,27 @@ const SearchSection = ({
 
   return (
     <div className="container">
-      <h5>Please enter a search below:</h5>
-      <div className="d-flex flex-wrap justify-content-center align-items-center pt-2">
-        {searchType === 'cityname' && (
-          <>
-            <SearchTextInput
-              className=""
-              search={searchCity}
-              setSearch={setSearchCity}
-              placeholder="City"
-            />
-            <SearchTextInput
-              search={searchCountry}
-              setSearch={setSearchCountry}
-              placeholder="Country (Optional)"
-            />
-          </>
-        )}
-        {searchType === 'postcode' && (
-          <>
-            <SearchTextInput
-              search={searchPostcode}
-              setSearch={setSearchPostcode}
-              placeholder="Postcode"
-            />
-            <SearchTextInput
-              search={searchCountry}
-              setSearch={setSearchCountry}
-              placeholder="Country (Optional)"
-            />
-          </>
-        )}
-        {searchType === 'latlong' && (
-          <>
-            <SearchTextInput
-              search={searchLat}
-              setSearch={setSearchLat}
-              placeholder="Latitude"
-            />
-            <SearchTextInput
-              search={searchLon}
-              setSearch={setSearchLon}
-              placeholder="Longitude"
-            />
-          </>
-        )}
-
-        <div className="d-flex col-12 col-md-3 justify-content-center align-items-center">
+      <div className="row justify-content-center align-items-center">
+        {/* Outputs text inputs depending on which redio button selected */}
+        <div className="d-flex flex-wrap col-9 col-md-9 pe-2">
+          <SearchInputSection
+            searchType={searchType}
+            searchCity={searchCity}
+            setSearchCity={setSearchCity}
+            searchCountry={searchCountry}
+            setSearchCountry={setSearchCountry}
+            searchPostcode={searchPostcode}
+            setSearchPostcode={setSearchPostcode}
+            searchLat={searchLat}
+            setSearchLat={setSearchLat}
+            searchLon={searchLon}
+            setSearchLon={setSearchLon}
+          />
+        </div>
+        <div className="d-flex col-3 col-md-3 justify-content-center align-items-center ps-1">
           <button
             type="button"
-            className="btn btn-primary"
+            className="btn btn-clear-dark text-white w-100 px-0"
             onClick={handleSearchSubmit}
           >
             Search
