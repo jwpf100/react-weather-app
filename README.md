@@ -58,7 +58,7 @@ Is it possible to display all search options when there are duplicates e.g. mult
 
 ### Critical
 
-Leaving the search fields blank causes a fatal error - FIXED
+Leaving the search fields blank causes a fatal error [EDIT: FIXED]
 Saved Searches - ensure that duplicates can't be added to list
 
 ### Important
