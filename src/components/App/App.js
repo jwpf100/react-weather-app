@@ -64,6 +64,7 @@ const App = () => {
         searchList={searchList}
         setCurrentWeatherData={setCurrentWeatherData}
         setForecastWeatherData={setForecastWeatherData}
+        setCurrentSearch={setCurrentSearch}
         setSearchList={setSearchList}
       />
     </div>
