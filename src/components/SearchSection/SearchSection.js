@@ -8,7 +8,11 @@ import {
   fetchForecastWeatherData,
 } from '../../utils/api'
 
-const SearchSection = ({ setCurrentWeatherData, setForecastWeatherData }) => {
+const SearchSection = ({
+  setCurrentWeatherData,
+  setForecastWeatherData,
+  setCurrentSearch,
+}) => {
   const [searchCity, setSearchCity] = useState('')
   const [searchAltState, setAltState] = useState('')
   const [searchCountry, setSearchCountry] = useState('')
@@ -46,7 +50,8 @@ const SearchSection = ({ setCurrentWeatherData, setForecastWeatherData }) => {
       searchAltState,
       searchCountry,
       searchPostcode,
-      setCurrentWeatherData
+      setCurrentWeatherData,
+      setCurrentSearch
     )
     fetchForecastWeatherData(
       searchLat,
@@ -154,9 +159,11 @@ export default SearchSection
 SearchSection.propTypes = {
   setCurrentWeatherData: PropTypes.func,
   setForecastWeatherData: PropTypes.func,
+  setCurrentSearch: PropTypes.func,
 }
 
 SearchSection.defaultProps = {
   setCurrentWeatherData: () => {},
   setForecastWeatherData: () => {},
+  setCurrentSearch: () => {},
 }

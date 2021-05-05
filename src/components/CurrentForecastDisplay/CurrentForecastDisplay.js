@@ -1,24 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { weatherIconLink } from '../../utils/api'
+import { createWeatherObject } from '../../utils/data'
 
 const CurrentForecastDisplay = ({
   currentWeatherData,
-  setCurrentSearch,
   searchList,
   setSearchList,
 }) => {
   const handleSaveSearch = () => {
     // On save, create an object storing the current location.  Store that in state, and add to list of saved searches.
-    const currentLocationObject = {
-      latInput: currentWeatherData.data[0].lat,
-      lonInput: currentWeatherData.data[0].lon,
-      cityInput: currentWeatherData.data[0].city_name,
-      stateInput: currentWeatherData.data[0].state_code,
-      countryInput: currentWeatherData.data[0].country_code,
-      uniqueID: `${currentWeatherData.data[0].city_name},${currentWeatherData.data[0].state_code},${currentWeatherData.data[0].country_code}`,
-    }
-    setCurrentSearch(currentLocationObject)
+    const currentLocationObject = createWeatherObject(currentWeatherData)
     setSearchList([...searchList, currentLocationObject])
   }
 
@@ -70,14 +62,14 @@ export default CurrentForecastDisplay
 
 CurrentForecastDisplay.propTypes = {
   currentWeatherData: PropTypes.object,
-  setCurrentSearch: PropTypes.func,
+
   searchList: PropTypes.array,
   setSearchList: PropTypes.func,
 }
 
 CurrentForecastDisplay.defaultProps = {
   currentWeatherData: {},
-  setCurrentSearch: () => {},
+
   searchList: [],
   setSearchList: () => {},
 }
