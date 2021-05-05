@@ -9,6 +9,7 @@ import {
   storeLocationListLocal,
 } from '../../utils/localstorage'
 import FetchLocalData from '../../hooks/FetchLocalData'
+import MainHeading from '../Display/MainHeading'
 
 const App = () => {
   const {
@@ -46,7 +47,7 @@ const App = () => {
 
   return (
     <div>
-      <h1 className="text-center"> Weather App </h1>
+      <MainHeading>Weather App</MainHeading>
       <SearchSection
         setCurrentWeatherData={setCurrentWeatherData}
         setForecastWeatherData={setForecastWeatherData}
