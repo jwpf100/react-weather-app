@@ -45,9 +45,12 @@ const App = () => {
     }
   }, [searchList])
 
+  console.log(currentSearch)
+  console.log(currentSearch === undefined)
   return (
     <div className="bg-clear-dark bg-gradient">
-      {/* <MainHeading>Weather</MainHeading> */}
+      {currentSearch === undefined && <MainHeading>Weather</MainHeading>}
+
       <div className="container">
         <SearchSection
           setCurrentWeatherData={setCurrentWeatherData}
