@@ -5,7 +5,6 @@ import { createWeatherObject } from '../../utils/data'
 
 const CurrentForecastDisplay = ({
   currentWeatherData,
-
   searchList,
   setSearchList,
 }) => {

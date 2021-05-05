@@ -17,11 +17,17 @@ const storeLocationListLocal = (locationObject) => {
 // Get localstorage
 
 const getCurrentLocationLocal = () => {
-  JSON.parse(window.localStorage.getItem(currentLocationSelection))
+  const localStorageData = window.localStorage.getItem(currentLocationSelection)
+  return localStorageData === null || localStorageData === 'undefined'
+    ? {}
+    : JSON.parse(localStorageData)
 }
 
 const getLocationListLocal = () => {
-  JSON.parse(window.localStorage.getItem(locationList))
+  const localStorageData = window.localStorage.getItem(locationList)
+  return localStorageData === null || localStorageData === 'undefined'
+    ? []
+    : JSON.parse(localStorageData)
 }
 
 // Remove
