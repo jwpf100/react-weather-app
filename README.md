@@ -20,11 +20,12 @@ The app looks fairly simplistic currently. My priority was getting the app to fu
 
 ## Final Commit (End of the day)
 
-I started the task at approx 8.30 am. The commit that I tagged as final, was commit 6ccbbf1 at 18:41. Nb. I corrected a problem with the delete function in the commit I made shortly after this (919825e 19:25).
+I started the task at approx 8.30 am. The commit that I tagged as final, was commit 6ccbbf1 at 18:41 although I corrected a problem with the delete function in the commit I made shortly after this (919825e 19:25).
 
 ## Changes
 
-- Local storage function added 9am 05/05/2021
+- Fixed bug when searching with blank search terms - 3065469 - 22:30
+- Local storage function added - fae4e8a - 9am 05/05/2021
 
 ## Installation and Setup Instructions
 
