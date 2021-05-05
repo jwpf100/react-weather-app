@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import SearchCitySection from '../SearchCitySection'
-import SearchPostcodeSection from '../SearchPostcodeSection'
-import SearchLatLonSection from '../SearchLatLonSection'
+import SearchTextInput from '../SearchTextInput'
 import {
   fetchCurrentWeatherData,
   fetchForecastWeatherData,
@@ -74,32 +72,50 @@ const SearchSection = ({
     <div className="container">
       <h5>Please enter a search below:</h5>
       <div className="d-flex flex-wrap justify-content-center align-items-center pt-2">
-        <div className="col-12 col-md-9">
-          {searchType === 'cityname' && (
-            <SearchCitySection
-              searchCity={searchCity}
-              setSearchCity={setSearchCity}
-              searchCountry={searchCountry}
-              setSearchCountry={setSearchCountry}
+        {searchType === 'cityname' && (
+          <>
+            <SearchTextInput
+              className=""
+              search={searchCity}
+              setSearch={setSearchCity}
+              placeholder="City"
             />
-          )}
-          {searchType === 'postcode' && (
-            <SearchPostcodeSection
-              searchPostcode={searchPostcode}
-              setSearchPostcode={setSearchPostcode}
-              searchCountry={searchCountry}
-              setSearchCountry={setSearchCountry}
+            <SearchTextInput
+              search={searchCountry}
+              setSearch={setSearchCountry}
+              placeholder="Country (Optional)"
             />
-          )}
-          {searchType === 'latlong' && (
-            <SearchLatLonSection
-              searchLat={searchLat}
-              setSearchLat={setSearchLat}
-              searchLon={searchLon}
-              setSearchLon={setSearchLon}
+          </>
+        )}
+        {searchType === 'postcode' && (
+          <>
+            <SearchTextInput
+              search={searchPostcode}
+              setSearch={setSearchPostcode}
+              placeholder="Postcode"
             />
-          )}
-        </div>
+            <SearchTextInput
+              search={searchCountry}
+              setSearch={setSearchCountry}
+              placeholder="Country (Optional)"
+            />
+          </>
+        )}
+        {searchType === 'latlong' && (
+          <>
+            <SearchTextInput
+              search={searchLat}
+              setSearch={setSearchLat}
+              placeholder="Latitude"
+            />
+            <SearchTextInput
+              search={searchLon}
+              setSearch={setSearchLon}
+              placeholder="Longitude"
+            />
+          </>
+        )}
+
         <div className="d-flex col-12 col-md-3 justify-content-center align-items-center">
           <button
             type="button"
