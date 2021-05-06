@@ -20,7 +20,10 @@ const fetchCurrentWeatherData = async (
   setCurrentWeatherData,
   setCurrentSearch
 ) => {
-  const requestCurrentData = `https://api.weatherbit.io/v2.0/current?lat=${latInput}&lon=${lonInput}&city=${cityInput}&postal_code=${postcodeInput}&state=${stateInput}&country=${countryInput}&key=${APIKey}&include=minutely`
+  const latInputCheck = latInput === undefined ? '' : latInput
+  const lonInputCheck = lonInput === undefined ? '' : lonInput
+
+  const requestCurrentData = `https://api.weatherbit.io/v2.0/current?lat=${latInputCheck}&lon=${lonInputCheck}&city=${cityInput}&postal_code=${postcodeInput}&state=${stateInput}&country=${countryInput}&key=${APIKey}&include=minutely`
 
   const currentWeatherData = await fetch(requestCurrentData).then((response) =>
     response.json()
@@ -42,7 +45,10 @@ const fetchForecastWeatherData = async (
   postcodeInput,
   setForecastWeatherData
 ) => {
-  const requestForecastData = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${latInput}&lon=${lonInput}&city=${cityInput}&postal_code=${postcodeInput}&state=${stateInput}&country=${countryInput}&key=${APIKey}&include=minutely`
+  const latInputCheck = latInput === undefined ? '' : latInput
+  const lonInputCheck = lonInput === undefined ? '' : lonInput
+
+  const requestForecastData = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${latInputCheck}&lon=${lonInputCheck}&city=${cityInput}&postal_code=${postcodeInput}&state=${stateInput}&country=${countryInput}&key=${APIKey}&include=minutely`
 
   const forecastData = await fetch(requestForecastData).then((response) =>
     response.json()
