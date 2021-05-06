@@ -16,7 +16,7 @@ For the purposes of the task, I've decided to focus on the front end, and not ad
 
 I was also planning to add local storage to the app, in order for user's saved searches to be availabe when they return to the app. There are alternatives as well, such as adding a database, but the simplest solution would be to save the currentSearch and searchList array to local storage, and access it when the app opens. I didn't have time to add this in the time limit of the exercise but will add it after. [EDIT: this has been added to the most recent version]
 
-The app looks fairly simplistic currently. My priority was getting the app to function correctly, there is scope to improve the aesthetics in the future.
+The app looks fairly simplistic currently. My priority was getting the app to function correctly, there is scope to improve the aesthetics in the future. [EDIT:  App has now been styled for mobile and desktop]
 
 ## Final Commit (End of the day)
 
@@ -28,6 +28,7 @@ I started the task at approx 8.30 am. The commit that I tagged as final, was com
 - Local storage function added - fae4e8a - 9am 05/05/2021
 - Fixed bug with Show Weather button in saved searches - c4c746c - 12:00 06/05/2021
 - Save search now checks and blocks duplicates - fa81cef - 06/05/21
+- Fixed bug when searching for postcodes - 2e99124 - 07/05/21
 
 ## Installation and Setup Instructions
 
@@ -64,15 +65,15 @@ I have added these to my project plan which can be seen at: https://github.com/j
 ### Critical
 
 - Leaving the search fields blank causes a fatal error [EDIT: FIXED]
-- Saved Searches - ensure that duplicates can't be added to list
+- Saved Searches - ensure that duplicates can't be added to list [EDIT: FIXED]
 
 ### Important
 
 - Error catching when API doesn't return with data - currently nothing happens
 - Validation on Search Inputs (Number validation on lat/long, text on country)
-- Design/Appearance needs to be improved, currently the app looks very basic
-- Formatting of output e.g. Lat/Lon reduce digits, date on 7 day forecast in US
-- Display of seven day forecast, break into columns that are aligned
+- Design/Appearance needs to be improved, currently the app looks very basic [EDIT: FIXED]
+- Formatting of output e.g. Lat/Lon reduce digits, date on 7 day forecast in US [EDIT: FIXED]
+- Display of seven day forecast, break into columns that are aligned [EDIT: FIXED]
 
 ### Less Urgent
 
