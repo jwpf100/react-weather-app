@@ -14,7 +14,7 @@ I decided to use React, Bootstrap and a component oriented programming method to
 
 For the purposes of the task, I've decided to focus on the front end, and not add a back end to manage interactions with the API. This would be a consideration with more time, as using React means that the API key is exposed to the users which is a security risk. There are alternatives that I can look at which would include using private routes, or to add a server, probably using express, to handle the API calls.
 
-I was also planning to add local storage to the app, in order for user's saved searches to be availabe when they return to the app. There are alternatives as well, such as adding a database, but the simplest solution would be to save the currentSearch and searchList array to local storage, and access it when the app opens. I didn't have time to add this in the time limit of the exercise but will add it after. [EDIT: this has been added to the most recent version]
+I was also planning to add local storage to the app, in order for user's saved searches to be available when they return to the app. There are alternatives as well, such as adding a database, but the simplest solution would be to save the currentSearch and searchList array to local storage, and access it when the app opens. I didn't have time to add this in the time limit of the exercise but will add it after. [EDIT: this has been added to the most recent version]
 
 The app looks fairly simplistic currently. My priority was getting the app to function correctly, there is scope to improve the aesthetics in the future. [EDIT:  App has now been styled for mobile and desktop]
 
