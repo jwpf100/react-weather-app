@@ -6,9 +6,20 @@ $custom-colors: (
   'clear-dark': #54a6dc,
 );
 
+$body-color: white;
+
 // Merge with bootstrap theme
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value');
+$utilities-colors: map-merge($theme-colors, $utilities-colors);
+/*$utilities-text-colors: map-loop(
+  $utilities-colors,
+  rgba-css-var,
+  '$key',
+  'text'
+);*/
+$utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, '$key', 'bg');
 
 // Main text colour
 
@@ -16,9 +27,3 @@ $body-color: white;
 
 // Input Place Holder override
 // $input-placeholder-color: black;
-
-/*
-clear
-#54a6dc
-#73bae1
-*/
