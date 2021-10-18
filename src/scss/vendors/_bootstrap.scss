@@ -2,32 +2,32 @@
 
 // Required
 @import '../../../node_modules/bootstrap/scss/functions';
-@import './node_modules/bootstrap/scss/_variables';
-@import './node_modules/bootstrap/scss/_mixins';
+
+@import '../../../node_modules/bootstrap/scss/_variables';
+
+@import '../../../node_modules/bootstrap/scss/_mixins';
 
 // Import Overrides here
 
-@import '../themes/_bootstrap_overrides';
-// @import "../themes/_fonts";
-// @import "../base/_override";
+@import '../themes/bootstrap_overrides';
 
 //Optional
 
 // Configuration
-@import './node_modules/bootstrap/scss/_utilities';
+@import '../../../node_modules/bootstrap/scss/_utilities';
 
 // Layout & components
-@import './node_modules/bootstrap/scss/_root';
-@import './node_modules/bootstrap/scss/_reboot';
+@import '../../../node_modules/bootstrap/scss/_root';
+@import '../../../node_modules/bootstrap/scss/_reboot';
 
-@import './node_modules/bootstrap/scss/_type';
+@import '../../../node_modules/bootstrap/scss/_type';
 // @import "./node_modules/bootstrap/scss/_images";
-@import './node_modules/bootstrap/scss/_containers'; // Using
-@import './node_modules/bootstrap/scss/_grid'; // Using
+@import '../../../node_modules/bootstrap/scss/_containers'; // Using
+@import '../../../node_modules/bootstrap/scss/_grid'; // Using
 // @import "./node_modules/bootstrap/scss/_tables";
-@import './node_modules/bootstrap/scss/_forms';
-@import './node_modules/bootstrap/scss/_buttons';
-@import './node_modules/bootstrap/scss/_transitions';
+@import '../../../node_modules/bootstrap/scss/_forms';
+@import '../../../node_modules/bootstrap/scss/_buttons';
+@import '../../../node_modules/bootstrap/scss/_transitions';
 // @import "./node_modules/bootstrap/scss/_dropdown";
 // @import "./node_modules/bootstrap/scss/_button-group";
 // @import "./node_modules/bootstrap/scss/_nav"; // Using
@@ -49,7 +49,7 @@
 // @import "./node_modules/bootstrap/scss/_spinners";
 
 // Helpers
-@import './node_modules/bootstrap/scss/_helpers';
+@import '../../../node_modules/bootstrap/scss/_helpers';
 
 // Utilities
-@import './node_modules/bootstrap/scss/utilities/_api';
+@import '../../../node_modules/bootstrap/scss/utilities/_api';
