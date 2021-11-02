@@ -73,7 +73,7 @@ const SearchSection = ({
   const handleRadioSelectionChange = (e) => setSearchType(e.target.id)
 
   return (
-    <div className="container mt-3 py-3 bg-clear bg-gradient">
+    <div className="searchSection container mt-3 py-3 bg-opacity-0">
       <div className="row justify-content-center align-items-center">
         {/* Outputs text inputs depending on which redio button selected */}
         <div className="d-flex flex-wrap col-9 col-md-9 pe-2">
@@ -92,7 +92,10 @@ const SearchSection = ({
           />
         </div>
         <div className="d-flex col-3 col-md-3 justify-content-center align-items-center ps-1">
-          <RegularButton onClick={handleSearchSubmit} bsClass="btn-clear">
+          <RegularButton
+            onClick={handleSearchSubmit}
+            bsClass="btn-opacity-0 border-white"
+          >
             Search
           </RegularButton>
         </div>

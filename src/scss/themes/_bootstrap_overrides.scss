@@ -13,17 +13,11 @@ $body-color: white;
 $theme-colors: map-merge($theme-colors, $custom-colors);
 $theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value');
 $utilities-colors: map-merge($theme-colors, $utilities-colors);
+$utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, '$key', 'bg');
+// Currently the code below stops us setting body colour
 /*$utilities-text-colors: map-loop(
   $utilities-colors,
   rgba-css-var,
   '$key',
   'text'
 );*/
-$utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, '$key', 'bg');
-
-// Main text colour
-
-$body-color: white;
-
-// Input Place Holder override
-// $input-placeholder-color: black;

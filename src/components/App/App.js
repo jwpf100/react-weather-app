@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import '../../scss/custom.scss'
 import SearchSection from '../SearchSection'
 import CurrentForecastDisplay from '../CurrentForecastDisplay'
 import SevenDayForecastDisplay from '../SevenDayForecastDisplay'

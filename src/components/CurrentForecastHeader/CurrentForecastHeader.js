@@ -20,7 +20,7 @@ const CurrentForecastHeader = ({ currentWeatherData, onClick }) => {
         <p className="fst-italic fw-light">{`(${countryCode} ${lat} ${lon})`}</p>
       </div>
       <div className="col-2 d-flex justify-content-center align-items-center">
-        <RegularButton onClick={onClick} bsClass="btn-clear">
+        <RegularButton onClick={onClick} bsClass="btn-opacity-0 border-white">
           Save
         </RegularButton>
       </div>
