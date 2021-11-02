@@ -57,12 +57,18 @@ const SavedSearchList = ({
       <div className="fw-light px-3 col-8">{`${search.cityInput}, ${search.countryInput}`}</div>
       <div className="d-flex col-4 justify-content-end align-items-center">
         <div className="col-6 p-1 my-1">
-          <RegularButton onClick={handleShowSavedSearch} bsClass="btn-clear">
+          <RegularButton
+            onClick={handleShowSavedSearch}
+            bsClass="btn-opacity-0 border-white"
+          >
             Show
           </RegularButton>
         </div>
         <div className="col-6 p-1">
-          <RegularButton onClick={deleteFromList} bsClass="btn-danger">
+          <RegularButton
+            onClick={deleteFromList}
+            bsClass="btn-danger bg-opacity-50 border-white"
+          >
             Delete
           </RegularButton>
         </div>

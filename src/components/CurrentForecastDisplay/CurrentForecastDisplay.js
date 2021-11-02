@@ -19,7 +19,7 @@ const CurrentForecastDisplay = ({
       {Object.keys(currentWeatherData).length === 0 ? (
         <div className="container">Please search for a location...</div>
       ) : (
-        <div className="container bg-clear bg-gradient h-100 py-3 mt-3">
+        <div className="currentForecastDisplay container bg-opacity-0 h-100 py-3 mt-3">
           <CurrentForecastHeader
             currentWeatherData={currentWeatherData}
             onClick={handleSaveSearch}

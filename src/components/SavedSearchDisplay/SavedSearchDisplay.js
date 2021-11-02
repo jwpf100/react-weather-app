@@ -15,7 +15,7 @@ const CurrentForecastDisplay = ({
         <div className="container">No Saved Searchs</div>
       ) : (
         <div>
-          <div className="container bg-clear-dark bg-gradient mt-3 py-3 ">
+          <div className="savedSearchDisplay container bg-opacity-0 mt-3 py-3 ">
             {searchList.map((search) => (
               <SavedSearchList
                 search={search}
