@@ -13,6 +13,7 @@ const FetchLocalData = () => {
   const [loading, setLoading] = useState()
 
   useEffect(() => {
+    // eslint-disable-next-line no-unused-vars
     let ignore = false
     const fetchLocalData = () => {
       setLoading(true)
