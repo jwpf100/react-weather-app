@@ -14,6 +14,7 @@ const SearchSection = ({
   setCurrentSearch,
 }) => {
   const [searchCity, setSearchCity] = useState('')
+  // eslint-disable-next-line no-unused-vars
   const [searchAltState, setAltState] = useState('')
   const [searchCountry, setSearchCountry] = useState('')
   const [searchPostcode, setSearchPostcode] = useState('')
@@ -38,6 +39,7 @@ const SearchSection = ({
     // Temporary fix.  Ensure that empty searches can't go to the API.  Validation needs to be added to prevent the error.
     if (!searchCity && !searchPostcode) {
       if (!searchLat || !searchLon) {
+        // eslint-disable-next-line no-alert
         return alert(
           'Please enter a city, postcode or latitude & longitude to search.  Thanks!'
         )
