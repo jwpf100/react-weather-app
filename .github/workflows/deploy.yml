@@ -33,7 +33,7 @@ jobs:
           aws-region: eu-west-2
 
       - name: Deploy
-        run: aws s3 sync ./public s3://${{ secrets.PROD_AWS_S3_BUCKET_NAME }} --size-only --exclude ".github/*"
+        run: aws s3 sync ./public s3://${{ secrets.PROD_AWS_S3_BUCKET_NAME }}/${{ secrets.PROD_AWS_S3_FOLDER_NAME }} --size-only --exclude ".github/*"
 
       - name: Invalidate Cloudfront CDN
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.PROD_CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'
