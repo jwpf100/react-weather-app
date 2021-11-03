@@ -18,6 +18,14 @@ I was also planning to add local storage to the app, in order for user's saved s
 
 The app looks fairly simplistic currently. My priority was getting the app to function correctly, there is scope to improve the aesthetics in the future.
 
+## Screenshots
+
+Mobile:<br>
+<img src="https://user-images.githubusercontent.com/64267174/140054014-108a0246-7e25-4189-949f-443633322c7d.png" alt="alt text" width="250" height="444"> <img src="https://user-images.githubusercontent.com/64267174/140054063-3c7b7c0e-b174-4516-b8cb-86cd3752999b.png" alt="alt text" width="250" height="444">
+
+Desktop: <br>
+<img src="https://user-images.githubusercontent.com/64267174/140054162-ef51613e-9adb-4be0-abe0-9a172dc5582e.png" alt="alt text" width="600">
+
 ## Final Commit (End of the day)
 
 I started the task at approx 8.30 am. The commit that I tagged as final, was commit 6ccbbf1 at 18:41 although I corrected a problem with the delete function in the commit I made shortly after this (919825e 19:25).
